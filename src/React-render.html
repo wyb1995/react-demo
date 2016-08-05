@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React-render</title>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+<div id="a"></div>
+
+<script type="text/babel">
+    var ExampleApplication = React.createClass({
+        render: function() {
+            var elapsed = Math.round(this.props.elapsed  / 100);
+            var seconds = elapsed / 10 + (elapsed % 10 ? '' : '.0' );
+            var message = 'React has been successfully running for ' + seconds + ' seconds.'
+
+            return React.createElement('span', null, message);
+        }
+    });
+
+    var start = new Date().getTime();
+    setInterval(function() {
+        React.render(
+                React.createElement(ExampleApplication, {elapsed: new Date().getTime() - start}),
+                document.getElementById('a')
+        );
+    }, 1000);
+//    React.render(<h1>React入门教程</h1>,document.getElementById("a"))
+
+</script>
+</body>
+</html>

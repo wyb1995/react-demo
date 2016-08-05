@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React-component-demo</title>
+    <!--<script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>-->
+    <!--<script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>-->
+    <!--<script src="http://static.runoob.com/assets/react/browser.min.js"></script>-->
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+<div id="a"></div>
+<script type="text/babel">
+    class NewComponent extends React.Component{
+        render(){
+            return (
+                    <h1>I am a newComponent!</h1>
+            );
+        }
+    }
+
+    ReactDOM.render(
+            <NewComponent/>,
+            document.getElementById("a")
+    )
+</script>
+</body>
+</html>
